@@ -1,0 +1,14 @@
+---
+- name : working on global scope variable
+  hosts: myserver
+  tasks:
+    - name: installing and install apps
+      apt:
+        name: "{{a}}"
+        state: "{{b}}"
+        update_cache: "{{c}}"
+...
+----------------------------------------------------------------
+commands to run playbook:
+ ansible-playbook glpblescop.yml --extra-vars "a=maven b=present c=yes" -b 
+==============================================================================
