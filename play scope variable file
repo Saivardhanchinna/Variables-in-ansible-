@@ -1,0 +1,17 @@
+---
+- name: install tomcat10 - install with play scope variables
+  hosts: myserver
+  vars:
+      a: tomcat10
+      b: present
+      c: yes
+
+  tasks:
+    - name: install tomcat
+      apt:
+        name: "{{a}}"
+        state: "{{b}}"
+        update_cache: "{{c}}"
+...
+===========================================================
+ansible-playbook playscop.yml -b
